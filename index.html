@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -16,6 +16,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
     <div class="hero">
       <h2>Hello, I'm Rajkishor</h2>
       <p>Web Developer</p>
@@ -60,11 +61,26 @@
   </section>
 
   <section id="contact">
-    <a herf="mailto: ommb600@gmail.com"<h2>Contact Me</h2 a>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
+    <h2>Contact Me</h2>
+
+    <!-- Mailto fallback -->
+    <p>If you prefer, email me directly: <a href="mailto:ommb600@gmail.com">ommb600@gmail.com</a></p>
+
+    <!-- Formspree form -->
+    <form id="contact-form" action="https://formspree.io/f/xpqqayvj" method="POST">
+      <input type="hidden" name="_subject" value="New contact from portfolio" />
+      <label for="name" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Your Name</label>
+      <input id="name" name="name" type="text" placeholder="Your Name" required />
+
+      <label for="email" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Your Email</label>
+      <input id="email" name="email" type="email" placeholder="Your Email" required />
+
+      <label for="message" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Your Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+      <!-- Honeypot to reduce spam -->
+      <input type="text" name="_gotcha" style="display:none" />
+
       <button type="submit">Send Message</button>
     </form>
   </section>
